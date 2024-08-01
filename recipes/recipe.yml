@@ -35,12 +35,11 @@ modules:
       - gnome-terminal
       - gnome-tweaks
       - gnome-terminal-nautilus
-    replace:
-      - from-repo: https://copr.fedorainfracloud.org/coprs/ublue-os/staging/repo/fedora-%OS_VERSION%/ublue-os-staging-fedora-%OS_VERSION%.repo
-        packages:
-          - mutter
-          - mutter-common
-          - gdm
+      - gnome-shell-extension-apps-menu
+      - gnome-shell-extension-background-logo
+      - gnome-shell-extension-launch-new-instance
+      - gnome-shell-extension-places-menu
+      - gnome-shell-extension-window-list
 
   - type: akmods
     base: main # if not specified, classic "main" base is used by default
@@ -60,11 +59,9 @@ modules:
       - Fullscreen to Empty Workspace
       - Grand Theft Focus
       - Panel corners
-      - "[QSTweak] Quick Setting Tweaker"
-      - Rounded Window Corners Reborn
+      - 5446 # [QSTweak] Quick Setting Tweaker      - Rounded Window Corners Reborn
       - Tailscale QS
       - Tiling Shell
-
     uninstall:
       - GSConnect
 
@@ -101,9 +98,8 @@ modules:
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
     system:
-      # If no repo information is specified, Flathub will be used by default
-      # repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
-      # repo-name: flathub
+      repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+      repo-name: flathub-system
       repo-title: "Flathub (System)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
       install:
         - org.gnome.baobab
@@ -146,6 +142,9 @@ modules:
         - org.gnome.
         - com.visualstudio.code
     user:
+      repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+      repo-name: flathub-user
+      repo-title: "Flathub"
       install:
         - com.visualstudio.code
         - com.visualstudio.code.tool.fish
