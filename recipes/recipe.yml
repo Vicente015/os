@@ -35,11 +35,6 @@ modules:
       - gnome-terminal
       - gnome-tweaks
       - gnome-terminal-nautilus
-      - gnome-shell-extension-apps-menu
-      - gnome-shell-extension-background-logo
-      - gnome-shell-extension-launch-new-instance
-      - gnome-shell-extension-places-menu
-      - gnome-shell-extension-window-list
 
   - type: akmods
     base: main # if not specified, classic "main" base is used by default
