@@ -1,9 +1,0 @@
-[Unit]
-Description=Chezfiles Apply
-
-[Service]
-ExecStart=/usr/bin/chezfiles-apply system --mode skip
-Type=oneshot
-
-[Install]
-WantedBy=default.target
