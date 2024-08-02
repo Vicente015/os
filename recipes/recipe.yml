@@ -46,17 +46,18 @@ modules:
 
   - type: gnome-extensions
     install:
-      - Battery time
-      - Bluetooth Battery Meter
-      - Clipboard Indicator
-      - Dash to Dock
-      - Emoji Copy
-      - Fullscreen to Empty Workspace
-      - Grand Theft Focus
-      - Panel corners
-      - 5446 # [QSTweak] Quick Setting Tweaker      - Rounded Window Corners Reborn
-      - Tailscale QS
-      - Tiling Shell
+      - 5425  # Battery time
+      - 6670  # Bluetooth Battery Meter
+      - 779   # Clipboard Indicator
+      - 307   # Dash to Dock
+      - 6242  # Emoji Copy
+      - 6072  # Fullscreen to Empty Workspace
+      - 5410  # Grand Theft Focus
+      - 4805  # Panel corners
+      - 5446  # [QSTweak] Quick Setting Tweaker      - Rounded Window Corners Reborn
+      - 6139  # Tailscale QS
+      - 7065  # Tiling Shell
+      - 7048  # Rounded Window Corners Reborn
     uninstall:
       - GSConnect
 
