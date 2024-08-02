@@ -146,6 +146,5 @@ modules:
   - type: bling
     install:
       - ublue-update # https://github.com/ublue-os/ublue-update
-      - gnome-vrr # enables gnome-vrr for your image
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
