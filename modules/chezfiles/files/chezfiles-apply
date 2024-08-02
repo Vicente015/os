@@ -1,0 +1,42 @@
+#!/usr/bin/env nu
+
+def main [
+  type: string # system, user
+  --mode(-m) = "prompt": string # prompt: interactively chezmoi apply, skip: never overwrite existing files, overwrite: always overwrite existing files
+] {
+  let entries = (ls -a /usr/share/bluebuild/chezfiles/($type) | get name)
+
+  if not (type in ["system", "user"]) {
+    echo "type must be either `system` or `user`"
+    echo "see --help for more info"
+    exit 1
+  }
+  
+  for entry in $entries {
+    let entry_name = echo $entry | path basename
+
+    let state_file = if type == "system" {
+      $"/etc/bluebuild/chezfiles/($entry_name)/chezmoi-state"
+    } else if type == "user" {
+      $"~/.local/state/bluebuild/chezfiles/($entry_name)/chezmoi-state"
+    }
+
+    let destination = if type == "system" {
+      "/"
+    } else if type == "user" {
+      "~"
+    }
+    
+    if $mode == "skip" {
+      yes "skip" | chezmoi apply --destination $destination --source $entry --persistent-state $state_file --no-tty --keep-going
+    } else if $mode == "overwrite" {
+      chezmoi apply --destination $destination --source $entry --persistent-state $state_file --force
+    } else if $mode == "prompt" {
+      chezmoi apply --destination $destination --source $entry --persistent-state $state_file
+    } else {
+      echo "--mode must be either `prompt`, `skip` or `overwrite`"
+      echo "see --help for more info"
+      exit 1
+    }
+  }
+}

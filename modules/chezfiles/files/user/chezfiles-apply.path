@@ -1,0 +1,8 @@
+[Unit]
+Description=Automatically apply chezfiles when they change
+
+[Path]
+PathModified=/usr/share/bluebuild/chezfiles/user/
+
+[Install]
+WantedBy=default.target
