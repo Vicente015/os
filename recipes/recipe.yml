@@ -58,8 +58,6 @@ modules:
       - 6139  # Tailscale QS
       - 7065  # Tiling Shell
       - 7048  # Rounded Window Corners Reborn
-    uninstall:
-      - GSConnect
 
   - type: brew
     packages:
@@ -135,7 +133,6 @@ modules:
         - org.gnome.eog
         - org.gnome.Totem
         - org.gnome.Evince
-        - org.gnome.
         - com.visualstudio.code
     user:
       repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
