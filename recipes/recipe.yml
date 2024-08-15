@@ -41,8 +41,8 @@ modules:
     install:
       - openrazer
       - openrgb
-      - rtl8814au
-      - rtl88xxau
+      # - rtl8814au
+      # - rtl88xxau
 
   - type: gnome-extensions
     install:
