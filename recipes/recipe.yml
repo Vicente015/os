@@ -21,7 +21,7 @@ modules:
   - type: rpm-ostree
     repos:
       - tailscale-stable.repo
-      - zerotier.repo
+      - https://copr.fedorainfracloud.org/coprs/atim/zerotier-one/repo/fedora-%OS_VERSION%/atim-zerotier-one-fedora-%OS_VERSION%.repo
     install:
       - ddcutil
       - fish
