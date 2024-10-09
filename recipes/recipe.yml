@@ -40,8 +40,8 @@ modules:
   - type: akmods
     base: main # if not specified, classic "main" base is used by default
     install:
-      - openrazer
-      - openrgb
+      # - openrazer
+      # - openrgb
       # - rtl8814au
       # - rtl88xxau
 
