@@ -40,10 +40,9 @@ modules:
   - type: akmods
     base: main # if not specified, classic "main" base is used by default
     install:
-      # - openrazer
-      # - openrgb
-      # - rtl8814au
-      # - rtl88xxau
+      - openrazer
+      - rtl8814au
+      - rtl88xxau
 
   - type: gnome-extensions
     install:
