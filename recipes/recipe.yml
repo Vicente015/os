@@ -14,9 +14,9 @@ modules:
     files:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
-                       # put configuration files you want in /usr/etc/ inside the image
-                       # while putting files in /etc/ is done on booted system by system administrators.
-                       # read more about this in files module reference.
+  # put configuration files you want in /usr/etc/ inside the image
+  # while putting files in /etc/ is done on booted system by system administrators.
+  # read more about this in files module reference.
 
   - type: rpm-ostree
     repos:
@@ -30,12 +30,14 @@ modules:
       - tlp
       - tlp-rdw
       - gnome-console
+      - nautilus-gsconnect
+      - openssh-askpass
     remove:
       - firefox
       - firefox-langpacks
-      - gnome-terminal
       - gnome-tweaks
       - gnome-terminal-nautilus
+      - gnome-classic-session
 
   - type: akmods
     base: main # if not specified, classic "main" base is used by default
@@ -46,18 +48,18 @@ modules:
 
   - type: gnome-extensions
     install:
-      - 5425  # Battery time
-      - 6670  # Bluetooth Battery Meter
-      - 779   # Clipboard Indicator
-      - 307   # Dash to Dock
-      - 6242  # Emoji Copy
-      - 6072  # Fullscreen to Empty Workspace
-      - 5410  # Grand Theft Focus
-      - 4805  # Panel corners
-      - 5446  # [QSTweak] Quick Setting Tweaker      - Rounded Window Corners Reborn
-      - 6139  # Tailscale QS
-      - 7065  # Tiling Shell
-      - 7048  # Rounded Window Corners Reborn
+      - 5425 # Battery time
+      - 6670 # Bluetooth Battery Meter
+      - 779 # Clipboard Indicator
+      - 307 # Dash to Dock
+      - 6242 # Emoji Copy
+      - 6072 # Fullscreen to Empty Workspace
+      - 5410 # Grand Theft Focus
+      - 4805 # Panel corners
+      - 5446 # [QSTweak] Quick Setting Tweaker      - Rounded Window Corners Reborn
+      - 6139 # Tailscale QS
+      - 7065 # Tiling Shell
+      - 7048 # Rounded Window Corners Reborn
 
   - type: brew
     packages:
