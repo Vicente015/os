@@ -32,6 +32,7 @@ modules:
       - gnome-console
       - nautilus-gsconnect
       - openssh-askpass
+      - gnome-backgrounds-extras
     remove:
       - firefox
       - firefox-langpacks
