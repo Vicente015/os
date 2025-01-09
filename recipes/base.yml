@@ -141,5 +141,3 @@ modules:
       # - rpmfusion # install RPMFusion repos, including tainted repos & disable negativo17 repos if installed
       - ublue-update # https://github.com/ublue-os/ublue-update
       # - dconf-update-service # a service unit that updates the dconf db on boot
-
-  - type: signing # this sets up the proper policy & signing files for signed images to work fully
