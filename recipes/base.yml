@@ -1,3 +1,6 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
+
 modules:
   - type: files
     files:
@@ -53,19 +56,19 @@ modules:
 
   - type: brew
     brew-analytics: false
-    packages:
-      - bat
-      - catimg
-      - eza
-      - git-delta
-      - gh
-      - micro
-      - volta
-      - pfetch
-      - tldr
-      - starship
-      - glow
-      - lazygit
+    # packages:
+    #   - bat
+    #   - catimg
+    #   - eza
+    #   - git-delta
+    #   - gh
+    #   - micro
+    #   - volta
+    #   - pfetch
+    #   - tldr
+    #   - starship
+    #   - glow
+    #   - lazygit
 
   - type: fonts
     fonts:
