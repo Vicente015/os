@@ -32,12 +32,12 @@ modules:
       - gnome-tweaks
       - gnome-classic-session
 
-  - type: akmods
-    base: main # if not specified, classic "main" base is used by default
-    install:
-      - openrazer
-      - rtl8814au
-      - rtl88xxau
+  # - type: akmods
+  #   base: main # if not specified, classic "main" base is used by default
+  #   install:
+  #     - openrazer
+  #     - rtl8814au
+  #     - rtl88xxau
 
   - type: gnome-extensions
     install:
