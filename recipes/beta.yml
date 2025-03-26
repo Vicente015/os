@@ -1,8 +1,8 @@
 name: os-rawhide
 description: This is my personal OS image.
 
-base-image: quay.io/fedora/fedora-silverblue
-image-version: rawhide
+base-image: ghcr.io/ublue-os/silverblue-main
+image-version: beta
 
 modules:
   - from-file: base.yml
