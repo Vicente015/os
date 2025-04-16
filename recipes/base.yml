@@ -21,7 +21,7 @@ modules:
       - ddcutil
       - fish
       - tailscale
-      - zerotier-one
+      #- zerotier-one
       - tlp
       - tlp-rdw
       - gnome-console
