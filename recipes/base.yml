@@ -33,7 +33,7 @@ modules:
     remove:
       - firefox
       - firefox-langpacks
-      - gnome-tweaks
+      # - gnome-tweaks
       - gnome-classic-session
 
   - type: brew
