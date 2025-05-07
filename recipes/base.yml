@@ -13,7 +13,7 @@ modules:
   - type: bling
     install:
       - rpmfusion
-      - ublue-update
+      # - ublue-update # see: https://www.answeroverflow.com/m/1336702238348935328
 
   - type: rpm-ostree
     repos:
