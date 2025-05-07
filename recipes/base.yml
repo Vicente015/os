@@ -13,15 +13,17 @@ modules:
   - type: bling
     install:
       - rpmfusion
+      - ublue-update
 
   - type: rpm-ostree
     repos:
       - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+      - https://repo.librewolf.net/librewolf.repo
     install:
       - ddcutil
       - fish
       - tailscale
-      #- zerotier-one
+      - zerotier-one
       - tlp
       - tlp-rdw
       - gnome-console
@@ -30,6 +32,7 @@ modules:
       - gnome-backgrounds-extras
       - podman-compose
       - sushi
+      - librewolf
     remove:
       - firefox
       - firefox-langpacks
@@ -89,6 +92,7 @@ modules:
         - com.mattjakeman.ExtensionManager
         - org.gnome.Logs
         - io.missioncenter.MissionCenter
+        - app.devsuite.Manuals
       # Flatpak runtimes are not supported (like org.winehq.Wine//stable-23.08),
       # only normal flatpak applications are (like Floorp Lightning web browser in this example).
       # Installing different branches of the same Flatpak is not supported.
