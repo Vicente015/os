@@ -19,6 +19,7 @@ modules:
     repos:
       - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
       - https://repo.librewolf.net/librewolf.repo
+      - https://gist.githubusercontent.com/Vicente015/699754b51e4aee004dee420119c805bc/raw/7eda1086a14f998ca032335c92bc0f9318270ce5/zerotier.repo
     install:
       - ddcutil
       - fish
