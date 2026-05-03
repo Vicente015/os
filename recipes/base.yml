@@ -25,8 +25,8 @@ modules:
       - fish
       - tailscale
       - zerotier-one
-      - tlp
-      - tlp-rdw
+      # - tlp
+      # - tlp-rdw
       - gnome-console
       - nautilus-gsconnect
       - openssh-askpass
