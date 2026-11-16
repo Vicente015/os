@@ -1,0 +1,6 @@
+[zerotier]
+name=ZeroTier, Inc. RPM Release Repository
+baseurl=https://download.zerotier.com/redhat/fc/$releasever/
+enabled=1
+gpgcheck=1
+gpgkey=https://download.zerotier.com/contact@zerotier.com.gpg

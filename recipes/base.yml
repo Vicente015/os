@@ -10,35 +10,37 @@ modules:
   # while putting files in /etc/ is done on booted system by system administrators.
   # read more about this in files module reference.
 
-  - type: bling
-    install:
-      - rpmfusion
-      # - ublue-update # see: https://www.answeroverflow.com/m/1336702238348935328
-
-  - type: rpm-ostree
+  - type: dnf
     repos:
-      - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
-      - https://repo.librewolf.net/librewolf.repo
-      - https://gist.githubusercontent.com/Vicente015/699754b51e4aee004dee420119c805bc/raw/7eda1086a14f998ca032335c92bc0f9318270ce5/zerotier.repo
+      enable:
+        - fedora-multimedia
+      files:
+        - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+        - https://repo.librewolf.net/librewolf.repo
+        - zerotier.repo # files/dnf/zerotier.repo
     install:
-      - ddcutil
-      - fish
-      - tailscale
-      - zerotier-one
-      # - tlp
-      # - tlp-rdw
-      - gnome-console
-      - nautilus-gsconnect
-      - openssh-askpass
-      - gnome-backgrounds
-      - podman-compose
-      - sushi
-      - librewolf
+      packages:
+        - ddcutil
+        - fish
+        - tailscale
+        - zerotier-one
+        # - tlp
+        # - tlp-rdw
+        - gnome-console
+        - nautilus-gsconnect
+        - openssh-askpass
+        - gnome-backgrounds
+        - podman-compose
+        - sushi
+        - librewolf
+        - adwaita-sans-fonts
+        - adwaita-mono-fonts
     remove:
-      - firefox
-      - firefox-langpacks
-      # - gnome-tweaks
-      - gnome-classic-session
+      packages:
+        - firefox
+        - firefox-langpacks
+        # - gnome-tweaks
+        - gnome-classic-session
 
   - type: brew
     brew-analytics: false
