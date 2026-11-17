@@ -1,0 +1,43 @@
+# Publishes os-nvidia:migration only. Stable os-nvidia:latest is intentionally
+# not built here.
+name: bluebuild-nvidia-migration
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - recipes/nvidia-migration.yml
+      - recipes/base.yml
+      - files/**
+      - .github/workflows/build-nvidia-migration.yml
+      - tests/**
+  workflow_dispatch:
+
+concurrency:
+  group: nvidia-migration
+  cancel-in-progress: false
+
+jobs:
+  bluebuild:
+    name: Build NVIDIA migration image
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Run tests
+        run: python3 -m unittest discover -s tests -p test_nvidia_migration.py
+
+      - name: Build Custom Image
+        uses: blue-build/github-action@v1.14.0
+        with:
+          recipe: nvidia-migration.yml
+          cli_version: v0.9.42
+          cosign_private_key: ${{ secrets.SIGNING_SECRET }}
+          registry_token: ${{ github.token }}
+          maximize_build_space: true

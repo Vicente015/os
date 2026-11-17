@@ -1,0 +1,31 @@
+name: os-nvidia
+description: This is my personal OS image.
+
+base-image: ghcr.io/blue-build/base-images/fedora-silverblue-nvidia-open
+image-version: latest
+alt-tags: [migration]
+
+modules:
+  - type: dnf
+    repos:
+      files:
+        - https://negativo17.org/repos/fedora-multimedia.repo
+  - from-file: base.yml
+  - type: files
+    files:
+      - source: nvidia-migration
+        destination: /
+  - type: justfiles
+    include:
+      - 50-update-compat.just
+  - type: script
+    snippets:
+      - |
+        test -x /usr/bin/blujust
+        if [ ! -e /usr/bin/ujust ] && [ ! -L /usr/bin/ujust ]; then
+          ln -s blujust /usr/bin/ujust
+        fi
+        test -x /usr/bin/ujust
+        /usr/bin/ujust --show update-all
+        /usr/bin/ujust --show enroll-secure-boot-key
+  - type: signing

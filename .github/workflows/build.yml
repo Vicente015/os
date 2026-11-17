@@ -23,8 +23,9 @@ jobs:
       matrix:
         recipe:
           # !! Add your recipes here
+          # NVIDIA is built separately (build-nvidia-migration.yml) so it
+          # cannot overwrite the frozen os-nvidia:latest during the migration.
           - main.yml
-          - nvidia.yml
     steps:
       # the build is fully handled by the reusable github action
       - name: Build Custom Image
